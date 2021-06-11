@@ -33,8 +33,19 @@ We wanted to give remote workers a way to relax and enjoy their limited free tim
 github branch flow:
 
 ## PM Tools
+- trello
+- github
 
 # Group Project: Begin Wireframes & Software Requirements
+requirements to run:
+    - internet
+    - browser
+    - keyboard
+requirements to dev:
+    - poetry: python
+    - brython
+    - phaser
+    - vue
 
 ## Wireframe
 - link
