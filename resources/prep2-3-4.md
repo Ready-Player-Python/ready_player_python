@@ -77,8 +77,5 @@ User Story sentence
 Feature Tasks
 Acceptance Tests
 
-## Software Requirements
-- link
-
 ## Domain Modeling
 - link
