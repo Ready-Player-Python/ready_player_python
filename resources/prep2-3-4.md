@@ -2,12 +2,30 @@
 
 ## Create your Pitch
 
-- Name of Project
+- Snake Game
+- Platform Game
 
-- Summary of idea.
-- What problem or pain point does it solve? a. Keep it high level without going into too much detail. (3-4 sentences is enough)
+## *Ready Player Python*
+
+- Summary of idea:
+It just makes sense.  
+Build object oriented class based game.  
+
+- What problem or pain point does it solve? a. Keep it high level without going into too much detail. (3-4 sentences is enough)  
+
+We wanted to give remote workers a way to relax and enjoy their limited free time. We've created a simple, easy, and addictive game. The pain point it solves is that group just needs some games in our portfolios.
+
 - Minimum Viable Product (MVP) definition.
-    - What is the minimum required for you to present on your demo day?
+
+    What is the minimum required for you to present on your demo day?
+    1. Simple Snake thats controllable by a user.
+    2. Have food for the snake to eat.
+    3. Snake can't eat its self.
+    4. Keep track of points.
+    Stretch
+    5. Snake moves faster when it eats
+    6. And longer when it eats
+    7. Theme - basic tool bar for user
 
 # Repo and Tooling
 
