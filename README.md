@@ -20,7 +20,7 @@
 
 ## Wire Frame
 
-<!-- LINK -->
+[Our Wire Frame](resources/midterm_wire.png)
 
 ## Team Agreement
 
