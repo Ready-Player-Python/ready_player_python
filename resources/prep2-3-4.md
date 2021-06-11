@@ -52,30 +52,7 @@ requirements to dev:
 
 ## User Stories
 
-1. Title
-User Story sentence
-Feature Tasks
-Acceptance Tests
-
-2. Title
-User Story sentence
-Feature Tasks
-Acceptance Tests
-
-3. Title
-User Story sentence
-Feature Tasks
-Acceptance Tests
-
-4. Title
-User Story sentence
-Feature Tasks
-Acceptance Tests
-
-5. Title
-User Story sentence
-Feature Tasks
-Acceptance Tests
+- link to trello
 
 ## Domain Modeling
 - link
