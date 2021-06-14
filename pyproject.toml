@@ -6,6 +6,9 @@ authors = ["hunter britten <huntergbritten@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+javascript = "^2015.32.59"
+browser = "^0.0.1"
+vue = "^0.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

@@ -1,25 +1,44 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <!-- <script src="https://cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser-arcade-physics.min.js"></script> -->
-
-  <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js"></script>
-
-  <style type="text/css">
-    body {
-      margin: 0;
-    }
-  </style>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.3/brython.min.js"
+    integrity="sha512-Idh2r/vlinKy7iPSPHkWFGfS0VTvg+eJSsMe84WJ6cV1kuE7PLPhSbm8yI4X16NmDhtYIAd17yVsIs6j0pz5uA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.3/brython_stdlib.min.js"
+    integrity="sha512-/dbn5WlrCaChpaIirA1PAiMtxmo2WHXbS1Qu4DjssLekyFQwPunfQOTqQ0YNeGom7uRjJpvg7LVGSVuWN3noJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <title>Python Snake</title>
 </head>
+
 
 <body onload="brython()">
 
   <script type="text/python" src="/ready_player_python/game.py"></script>
+  <script type="text/python" src="/ready_player_python/vue.py"></script>
 
+  <div style="text-align: right;"><button class="nice">Hide source code</button></div><div id="app">
+    Hello Brython Vue!
+  </div>
+  <div id="app-2"><span title="You loaded this page on 6/14/2021, 10:49:59 AM">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span></div>
+  <div id="app-4"><ol><li>
+        Learn JavaScript
+      </li><li>
+        Learn Vue
+      </li><li>
+        Build something awesome
+      </li></ol></div>
+  <div id="app-5"><p>Hello Vue.js!</p> <button>Reverse Message</button></div>
+  <div id="app-6"><p>Hello Vue!</p> <input></div>
+  <div id="app-7"><ol><li>Vegetables</li><li>Cheese</li><li>Whatever else humans are supposed to eat</li></ol></div>
+  <div id="pyapp1"><ol><li>TODO</li><li>ADDED</li></ol></div>
+  <div id="pyapp2"><button>add</button> <ol><li>TODO</li></ol></div>
 
 </body>
 
