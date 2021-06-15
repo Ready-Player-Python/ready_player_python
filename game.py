@@ -1,5 +1,6 @@
 from browser import window
 import javascript
+# TEST
 
 Vue = window.Vue
 
