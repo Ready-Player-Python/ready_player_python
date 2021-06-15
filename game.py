@@ -5,7 +5,8 @@ Vue = window.Vue
 
 def data(*args):
     return {
-        'greeting': 'Ready Player Python'
+        'greeting': 'Ready Player Python',
+        'color': '#50b333',
     }
 
 def handle_click(event):
@@ -21,11 +22,33 @@ methods = {
 }
 
 template = """
-    <h2 class="text-4xl">{{ greeting }}</h2>
-    <div>
-        <button @click="handle_click" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">YO</button>
-    </div>
+<body class="backdrop-opacity-1=20 bg-gradient-to-r from-yellow-300 via-red-400 to-pink-400">
+
+    <header class="bg-gradient-to-r from-yellow-300 via-red-400 to-pink-400">logo?</header>
+
+    <h2 class="flex justify-center text-4xl m-8 ">{{ greeting }}</h2>
+
+    <body>
+        <div class="flex justify-center space-x-36 mx-8 text-2xl">
+
+            <a href="https://www.google.com">Home</a>
+
+            <a href="https://www.google.com">About the Developers</a>
+        </div>
+    </body>
+
+    <div class="flex justify-center space-y-20 mt-24 text-3xl">THIS WILL BE PLAY BUTTON?</div>
+
+    <div class="flex justify-center border-2 border-black mx-64 mt-24 mb-36 p-36">GAME SPACE</div>
+
+   <footer>BYE</footer>
+
+
+
+</body>
+ 
 """
+
 
 
 # Put it all together
