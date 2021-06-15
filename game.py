@@ -1,4 +1,4 @@
-from browser import window
+from browser import window, document
 import javascript
 
 Vue = window.Vue
