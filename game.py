@@ -21,6 +21,7 @@ methods = {
 }
 
 template = """
+    <button class="flex justify-center space-y-20 mt-24 text-3xl">THIS WILL BE PLAY BUTTON?</button>
     <h2 class="text-4xl">{{ greeting }}</h2>
     <div>
         <button @click="handle_click" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">YO</button>
