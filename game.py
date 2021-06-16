@@ -36,8 +36,9 @@ methods = {
 }
 
 template = """
-    <button @click="start_game_slow">Slow Game</button>
-    <button @click="start_game_fast">Fast Game</button>
+    <button @click="start_game_slow" class="text-center block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Slow Game</button>
+    <button @click="start_game_fast" class="text-center block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Fast Game</button>
+    <button id="instructions-btn" class="btn btn-info text-center block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">?</button>
 """
 
 
