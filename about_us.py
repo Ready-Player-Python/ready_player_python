@@ -1,5 +1,4 @@
 from browser import window, document
-from browser import timer
 import javascript
 
 Vue = window.Vue
@@ -22,16 +21,6 @@ def handle_click_show_fighter_mason(event):
     document['body-hunter'].style.display = "none"
     document['body-brian'].style.display = "none"
     document['body-klace'].style.display = "none"
-    document['mason-body'].style.color = "red"
-
-def set_timer_for_typer(event):
-    timer.set_timeout(typewriter, 3000)
-
-def typewriter():
-    txt = 'example text for mason'
-    document['mason-body'].innerHTML = txt
-
-document['type'].bind('click', set_timer_for_typer)
 
 def handle_click_show_fighter_hunter(event):
     document['body-hunter'].style.display = "block"
@@ -57,8 +46,6 @@ methods = {
     "handle_click_show_fighter_hunter": handle_click_show_fighter_hunter,
     "handle_click_show_fighter_brian": handle_click_show_fighter_brian,
     "handle_click_show_fighter_klace": handle_click_show_fighter_klace,
-    "set_timer_for_typer": set_timer_for_typer,
-    "typewriter": typewriter
 }
 
 template = """
@@ -76,19 +63,19 @@ template = """
         </div>
         <div class="mt-2 mb-2 w-2/4">
             <div id="hello">
-                <div id="body-mason" style="display:none">
-                    <h2>{{ fighters[0] }}</h2>
-                    <p id="mason-body">body mason</p>
+                <div id="body-mason" style="display:none" class="css-typing">
+                    <p id="mason-body">{{ fighters[0] }} Aviles</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
-                <div id="body-brian" style="display:none">
+                <div id="body-brian" style="display:none" class="css-typing">
                     <h2>{{ fighters[3] }}</h2>
                     <p>body brian</p>
                 </div>
-                <div id="body-hunter" style="display:none">
+                <div id="body-hunter" style="display:none" class="css-typing">
                     <h2>{{ fighters[1] }}</h2>
                     <p>body hunter</p>
                 </div>
-                <div id="body-klace" style="display:none">
+                <div id="body-klace" style="display:none" class="css-typing">
                     <h2>{{ fighters[2] }}</h2>
                     <p>body klace</p>
                 </div>

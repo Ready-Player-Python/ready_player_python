@@ -15,8 +15,141 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
     <title>Python Snake: About Us</title>
+    <style>
+        .css-typing p {
+        border-right: .15em solid lime;
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        border: none;
+        border-color: none;
+        }
+        .css-typing p:nth-child(1) {
+        width: 7.3em;
+        -webkit-animation: type 2s steps(40, end);
+        animation: type 2s steps(40, end);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        }
+
+        .css-typing p:nth-child(2) {
+        width: 80%;
+        opacity: 0;
+        -webkit-animation: type2 2s steps(40, end);
+        animation: type2 2s steps(40, end);
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        }
+
+        .css-typing p:nth-child(3) {
+        width: 7.3em;
+        opacity: 0;
+        -webkit-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+        animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+        -webkit-animation-delay: 4s;
+        animation-delay: 4s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        }
+
+        @keyframes type {
+        0% {
+            width: 0;
+        }
+        99.9% {
+            border-right: .15em solid orange;
+        }
+        100% {
+            border: none;
+        }
+        }
+
+        @-webkit-keyframes type {
+        0% {
+            width: 0;
+        }
+        99.9% {
+            border-right: .15em solid orange;
+        }
+        100% {
+            border: none;
+        }
+        }
+
+        @keyframes type2 {
+        0% {
+            width: 0;
+        }
+        1% {
+            opacity: 1;
+        }
+        99.9% {
+            border-right: .15em solid orange;
+        }
+        100% {
+            opacity: 1;
+            border: none;
+        }
+        }
+
+        @-webkit-keyframes type2 {
+        0% {
+            width: 0;
+        }
+        1% {
+            opacity: 1;
+        }
+        99.9% {
+            border-right: .15em solid orange;
+        }
+        100% {
+            opacity: 1;
+            border: none;
+        }
+        }
+
+        @keyframes type3 {
+        0% {
+            width: 0;
+        }
+        1% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+
+        @-webkit-keyframes type3 {
+        0% {
+            width: 0;
+        }
+        1% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+        }
+        }
+
+        @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+        }
+        @-webkit-keyframes blink {
+        50% {
+            border-color: tranparent;
+        }
+        }
+
+    </style>
 </head>
 <body onload="brython()" class="bg-black">
+
     <!--Nav-->
     <nav id="header" class="w-full z-30 top-0 text-white bg-black">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
