@@ -17,6 +17,7 @@ paused = False
 
 ctx = None
 canvas = None
+game_loop = None
 
 
 def game():
@@ -77,7 +78,7 @@ def key_push(evt):
     elif key == 40 or key == 83 and not paused:
         xv = 0
         yv = 1
-    elif key == 32:
+    elif key == 80:
         temp = [xv, yv]
         xv = pre_pause[0]
         yv = pre_pause[1]
@@ -86,16 +87,21 @@ def key_push(evt):
 
 
 def show_instructions(evt):
-    window.alert("Use the arrow keys to move and press spacebar to pause the game.")
+    window.alert(
+        "Use the arrow keys or a, w, s, d to move and press spacebar to pause the game."
+    )
 
 
 def display_game(refresh_rate):
-    global canvas, ctx
+    global canvas, ctx, game_loop
+    instructions_btn = document["instructions-btn"]
     canvas = document["game-board"]
     ctx = canvas.getContext("2d")
-    document.addEventListener("keydown", key_push)
-    instructions_btn = document["instructions-btn"]
-    instructions_btn.addEventListener("click", show_instructions)
+    if game_loop:
+        window.clearInterval(game_loop)
+    else:
+        document.addEventListener("keydown", key_push)
+        instructions_btn.addEventListener("click", show_instructions)
     game_loop = window.setInterval(game, refresh_rate)
 
 
