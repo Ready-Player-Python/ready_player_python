@@ -7,15 +7,6 @@ fighters = ["Mason","Hunter","Klace","Brian"]
 page_title = "Ready Player Python"
 cta_button = "See It On Github"
 
-
-def data(*args):
-    return {
-        'greeting': 'Choose a Fighter',
-        'fighters': fighters,
-        'page_title': page_title,
-        'cta_button': cta_button
-    }
-
 def handle_click(event):
     print("clicked!")
     javascript.this().greeting = "change to this greeting"
@@ -43,6 +34,14 @@ def handle_click_show_fighter_klace(event):
     document['body-mason'].style.display = "none"
     document['body-hunter'].style.display = "none"
     document['body-brian'].style.display = "none"
+
+def data(*args):
+    return {
+        'greeting': 'Choose a Fighter',
+        'fighters': fighters,
+        'page_title': page_title,
+        'cta_button': cta_button
+    }
 
 methods = {
     "handle_click": handle_click,
@@ -97,14 +96,16 @@ template = """
                     <section class="flex">
                         <div class="mt-2 w-2/4">
                             <h2 class="text-4xl mb-2">{{ greeting }}</h2>
+                            <div>
+                                <button id="type" @click="handle_click_show_fighter_mason" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[0] }}</button>
+
+                                <button @click="handle_click_show_fighter_hunter" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[1] }}</button>
+
+                                <button @click="handle_click_show_fighter_klace" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[2] }}</button>
+
+                                <button @click="handle_click_show_fighter_brian" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[3] }}</button>
+                            </div>
                             <div id="panel"></div>
-                            <button id="type" @click="handle_click_show_fighter_mason" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[0] }}</button>
-
-                            <button @click="handle_click_show_fighter_hunter" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[1] }}</button>
-
-                            <button @click="handle_click_show_fighter_klace" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[2] }}</button>
-
-                            <button @click="handle_click_show_fighter_brian" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[3] }}</button>
                         </div>
                         <div class="mt-2 mb-2 w-2/4">
                             <div id="hello">
