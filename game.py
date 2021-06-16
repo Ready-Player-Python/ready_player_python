@@ -29,7 +29,7 @@ methods = {
 }
 
 template = """
-   <button @click="start_game">TEST</button>
+   <button @click="start_game">Play Game</button>
 """
 
 

@@ -83,24 +83,30 @@ def key_push(evt):
         yv = pre_pause[1]
         pre_pause = [*temp]
         paused = not paused
+    print(key)
+
 
 
 
 def show_instructions(evt):
     window.alert("Use the arrow keys to move and press spacebar to pause the game.")
 
-def display_gamex():
-    global canvas, ctx
-    canvas = document["game-board"]
-    ctx = canvas.getContext("2d")
-    document.addEventListener("keydown", key_push)
-    game_loop = window.setInterval(game, 1000 / 10)
-    instructions_btn = document["instructions-btn"]
-    instructions_btn.addEventListener("click", show_instructions)
 
 def display_game():
     global canvas, ctx
     canvas = document["game-board"]
     ctx = canvas.getContext("2d")
     document.addEventListener("keydown", key_push)
-    print(ctx)
+    # game_loop = window.setInterval(game, 1000 / 10)
+    instructions_btn = document["instructions-btn"]
+    instructions_btn.addEventListener("click", show_instructions)
+
+
+# def display_gamex():
+#     global canvas, ctx
+#     canvas = document["game-board"]
+#     ctx = canvas.getContext("2d")
+#     document.addEventListener("keydown", key_push)
+#     game_loop = window.setInterval(game, 1000 / 10)
+#     instructions_btn = document["instructions-btn"]
+#     instructions_btn.addEventListener("click", show_instructions)
