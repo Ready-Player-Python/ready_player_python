@@ -115,16 +115,24 @@
   <div class="pt-24 pb-24 backdrop-opacity-1=20 bg-gradient-to-r from-yellow-300 via-red-400 to-pink-400">
       <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center">
           <!-- Terminal Board -->
-          <div class="bg-gray-600 flex flex-col w-full md:w-5/6 items-start text-center md:text-left h-80 p-5">
+          <div class="bg-gray-600 flex flex-col w-full md:w-5/6 items-start text-center md:text-left h-80 p-10">
               <div class="w-full">
                   <!-- Vue Containers -->
                   <div id="app">
                   </div>
+                  <div>
+                    <button id="instructions-btn" class="btn btn-info">Instructions</button>
+                  </div>
+
+                  <canvas id="game-board" width="400" height="400" style="border: 1px solid black;"></canvas>
               </div>
           </div>
       </div>
   </div>
+  
   <script type="text/python" src="game.py"></script>
+
+
 <!-- 
   <div id="app"></div>
 
