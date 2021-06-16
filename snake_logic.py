@@ -39,7 +39,7 @@ def game():
         ctx.fillRect(trail[i][0] * gs, trail[i][1] * gs, gs - 2, gs - 2)
         if trail[i][0] == px and trail[i][1] == py:
             score = score if paused else 0
-            score = tail if paused else 5
+            tail = tail if paused else 5
     trail.insert(0, [px, py])
     while len(trail) > tail:
         trail.pop()
@@ -65,16 +65,16 @@ def update_score(new_score):
 def key_push(evt):
     global xv, yv, pre_pause, paused
     key = evt.keyCode
-    if key == 37 and not paused:
+    if key == 37 or key == 65 and not paused:
         xv = -1
         yv = 0
-    elif key == 38 and not paused:
+    elif key == 38 or key == 87 and not paused:
         xv = 0
         yv = -1
-    elif key == 39 and not paused:
+    elif key == 39 or key == 68 and not paused:
         xv = 1
         yv = 0
-    elif key == 40 and not paused:
+    elif key == 40 or key == 83 and not paused:
         xv = 0
         yv = 1
     elif key == 32:
