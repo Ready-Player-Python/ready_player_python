@@ -33,7 +33,7 @@ def game():
         py = 0
 
     ctx.fillStyle = "black"
-    ctx.fillRect(0, 0, canvas.width, canvas.heigth)
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = "lime"
     for i in range(len(trail)):
         ctx.fillRect(trail[i][0] * gs, trail[i][1] * gs, gs - 2, gs - 2)
@@ -97,9 +97,9 @@ def display_game():
     canvas = document["game-board"]
     ctx = canvas.getContext("2d")
     document.addEventListener("keydown", key_push)
-    # game_loop = window.setInterval(game, 1000 / 10)
     instructions_btn = document["instructions-btn"]
     instructions_btn.addEventListener("click", show_instructions)
+    game_loop = window.setInterval(game, 1000 / 10)
 
 
 # def display_gamex():
