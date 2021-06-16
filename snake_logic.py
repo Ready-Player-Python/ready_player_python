@@ -2,7 +2,6 @@ from browser import document, html, window
 import random
 
 
-
 score = 0
 high_score = 0
 
@@ -16,9 +15,10 @@ tail = 5
 pre_pause = [0, 0]
 paused = False
 
-ctx= None
+ctx = None
 canvas = None
-    
+
+
 def game():
     global px, py, tc, gs, applex, appley, trail, tail, score
     px += xv
@@ -58,7 +58,7 @@ def update_score(new_score):
     global high_score
     document["score"].innerHTML = "Score: " + str(new_score)
     if new_score > high_score:
-        document["high_score"].innerHTML = "High Score: " + str(new_score)
+        document["high-score"].innerHTML = "High Score: " + str(new_score)
         high_score = new_score
 
 
@@ -83,23 +83,20 @@ def key_push(evt):
         yv = pre_pause[1]
         pre_pause = [*temp]
         paused = not paused
-    print(key)
-
-
 
 
 def show_instructions(evt):
     window.alert("Use the arrow keys to move and press spacebar to pause the game.")
 
 
-def display_game():
+def display_game(refresh_rate):
     global canvas, ctx
     canvas = document["game-board"]
     ctx = canvas.getContext("2d")
     document.addEventListener("keydown", key_push)
     instructions_btn = document["instructions-btn"]
     instructions_btn.addEventListener("click", show_instructions)
-    game_loop = window.setInterval(game, 1000 / 10)
+    game_loop = window.setInterval(game, refresh_rate)
 
 
 # def display_gamex():
