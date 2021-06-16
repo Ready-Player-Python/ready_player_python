@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.3/brython.min.js"
+    integrity="sha512-Idh2r/vlinKy7iPSPHkWFGfS0VTvg+eJSsMe84WJ6cV1kuE7PLPhSbm8yI4X16NmDhtYIAd17yVsIs6j0pz5uA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.3/brython_stdlib.min.js">
+  </script>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+  <title>Python Snake</title>
+  <style>
+    h1 {
+      margin-top: 8%;
+      color: rgb(83, 238, 36);
+    }
+
+    h3 {
+      color: rgb(190, 187, 187);
+    }
+
+    h6 {
+      color: rgb(117, 117, 117);
+    }
+
+    a {
+      color: rgb(83, 238, 36);
+    }
+
+    button {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: transparent !important;
+      border-color: rgb(155, 156, 155) !important;
+      color: rgb(155, 156, 155) !important;
+      font-size: 8px !important;
+      padding: 3px !important;
+    }
+
+    button:hover {
+      border-color: rgb(68, 241, 68) !important;
+      color: rgb(194, 196, 194) !important;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    canvas {
+      margin-top: 1%;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      border: 1px;
+      border-style: solid;
+      border-color: #535353;
+    }
+  </style>
+</head>
+
+<body onload="brython()">
+  <!--Nav-->
+  <nav id="header" class="w-full z-30 top-0 text-white bg-black">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      <div class="pl-4 flex items-center">
+        <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+          href="index.html">
+          Ready Player Python
+        </a>
+      </div>
+      <div class="block lg:hidden pr-4">
+        <button id="nav-toggle"
+          class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+        id="nav-content">
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <li class="mr-3">
+            <a class="inline-block py-2 px-4 text-white font-bold no-underline" href="about_us.html">About Us</a>
+          </li>
+          <!-- <li class="mr-3">
+                    <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block text-white no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
+                </li> -->
+        </ul>
+        <a id="navAction"
+          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+          href="https://github.com/Ready-Player-Python/ready_player_python" target="_blank">
+          See It On Github
+        </a>
+      </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+  </nav>
+
+
+  <!-- Container -->
+  <div class="pt-24 pb-24 backdrop-opacity-1=20 bg-gradient-to-r from-yellow-300 via-red-400 to-pink-400">
+    <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center">
+      <!-- Terminal Board -->
+      <div class="bg-gray-600 flex flex-col w-full md:w-5/6 items-start text-center md:text-left h-80 p-10">
+        <div class="w-full">
+          <!-- Vue Containers -->
+          <div id="app">
+          </div>
+          <div>
+            <button id="instructions-btn" class="btn btn-info">Instructions</button>
+          </div>
+
+          <canvas id="game-board" width="400" height="400" style="border: 1px solid black;"></canvas>
+          <h3 id="score" class="text-center">Score: 0</h3>
+          <!-- <br> -->
+          <h6 id="high-score" class="text-center">High Score: 0</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/python" src="game.py"></script>
+
+
+  <!-- 
+  <div id="app"></div>
+
+  <body onload="brython()">
+    <h1 class="text-center">Snake built with <a href="https://brython.info">Python!</a></h1>
+    <canvas id="game-board" width="400" height="400"></canvas>
+    <br>
+    <h3 id="score" class="text-center">Score: 0</h3>
+    <br>
+    <h6 id="high-score" class="text-center">High Score: 0</h6>
+    <br>
+    <div class="text-center">
+      <button id="instructions-btn" class="btn btn-info">Instructions</button>
+    </div>
+    <script type="text/python" src="game.py"></script>
+  </body> -->
+</body>
+
+</html>
