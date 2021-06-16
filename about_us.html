@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.3/brython.min.js"
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.3/brython.min.js"
     integrity="sha512-Idh2r/vlinKy7iPSPHkWFGfS0VTvg+eJSsMe84WJ6cV1kuE7PLPhSbm8yI4X16NmDhtYIAd17yVsIs6j0pz5uA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.9.3/brython.min.js">
+    </script>
     <script src="https://unpkg.com/vue@next"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
     <title>Python Snake: About Us</title>
 </head>
-<body onload="brython()">
+<body onload="brython()" class="bg-black">
     <!--Nav-->
     <nav id="header" class="w-full z-30 top-0 text-white bg-black">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
@@ -56,7 +59,7 @@
     </nav>
 
     <!-- Container -->
-    <div class="pt-24 pb-24 bg-gray-400">
+    <div class="pt-24 pb-24 backdrop-opacity-1=20 bg-gradient-to-r from-yellow-300 via-red-400 to-pink-400">
         <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center">
             <!-- Terminal Board -->
             <div class="bg-gray-600 flex flex-col w-full md:w-5/6 items-start text-center md:text-left h-80 p-5">
