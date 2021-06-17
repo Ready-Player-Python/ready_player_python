@@ -3,9 +3,25 @@ import javascript
 
 Vue = window.Vue
 
-fighters = ["Mason","Hunter","Klace","Brian"]
 page_title = "Ready Player Python"
 cta_button = "See It On Github"
+
+fighter_button_classes = "bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5"
+linkedin_button_classes = "ml-5 inline-block text-base border border-white border-dashed p-1 hover:text-white"
+
+fighters = ["Mason","Hunter","Klace","Brian"]
+fighter_bios = [
+    "Hey, I’m Mason Aviles. I’m a software developer and have been in the front end space for 6 years.  I believe in accessible and creative technology.  I’m really passionate about being in this space because I see myself as a crafter and this is new age crafting.  I love building, creating, and watching people interact with my work.",
+    "",
+    "Hello I'm Klace Koch - I'm a former bomb and missile tech, turned bicycle mechanic, turned bike shop manager, and now my current form python developer.  I’m fascinated in that intersecting area between hardware and software and how to incorporate technology into traditionally analog environments. My hope is to join an organization that encourages innovation and appreciates the unconventional.",
+    "",
+]
+fighter_linkedins = [
+    "https://www.linkedin.com/in/masonaviles/",
+    "https://www.linkedin.com/in/hgbritten/",
+    "https://www.linkedin.com/in/klacewho/",
+    ""
+]
 
 def handle_click(event):
     print("clicked!")
@@ -40,7 +56,11 @@ def data(*args):
         'greeting': 'Choose a Fighter',
         'fighters': fighters,
         'page_title': page_title,
-        'cta_button': cta_button
+        'cta_button': cta_button,
+        'linkedin_button_classes': linkedin_button_classes,
+        'fighter_button_classes': fighter_button_classes,
+        'fighter_bios': fighter_bios,
+        'fighter_linkedins': fighter_linkedins
     }
 
 methods = {
@@ -97,22 +117,26 @@ template = """
                         <div class="mt-2 w-2/4">
                             <h2 class="text-4xl mb-2">{{ greeting }}</h2>
                             <div>
-                                <button id="type" @click="handle_click_show_fighter_mason" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[0] }}</button>
+                                <button id="type" @click="handle_click_show_fighter_mason" type="button" :class="fighter_button_classes">{{ fighters[0] }}</button>
 
-                                <button @click="handle_click_show_fighter_hunter" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[1] }}</button>
+                                <button @click="handle_click_show_fighter_hunter" type="button" :class="fighter_button_classes">{{ fighters[1] }}</button>
 
-                                <button @click="handle_click_show_fighter_klace" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[2] }}</button>
+                                <button @click="handle_click_show_fighter_klace" type="button" :class="fighter_button_classes">{{ fighters[2] }}</button>
 
-                                <button @click="handle_click_show_fighter_brian" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white mr-5">{{ fighters[3] }}</button>
+                                <button @click="handle_click_show_fighter_brian" type="button" :class="fighter_button_classes">{{ fighters[3] }}</button>
                             </div>
                             <div id="panel"></div>
                         </div>
                         <div class="mt-2 mb-2 w-2/4">
                             <div id="hello">
-                                <div id="body-mason" style="display:none">
-                                    <div class="css-typing">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate ve</p>
+                                <div id="body-mason" style="display:none" class="css-typing">
+                                    <h2 class="text-green-400 text-lg inline-block">> {{ fighters[0] }}</h2>
+                                    <a :href="fighter_linkedins[0]" :class="linkedin_button_classes">LinkedIn</a>
+                                    <div class="css-typing text-base mt-2">
+                                        <p class="text-gray-300">{{fighter_bios[0]}}</p>
                                         <div class="hiders">
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
                                             <p>&nbsp;</p>
                                             <p>&nbsp;</p>
                                             <p>&nbsp;</p>
@@ -125,16 +149,55 @@ template = """
                                     </div>
                                 </div>
                                 <div id="body-brian" style="display:none" class="css-typing">
-                                    <h2>{{ fighters[3] }}</h2>
-                                    <p>body brian</p>
+                                    <h2 class="text-green-400 text-lg inline-block">> {{ fighters[3] }}</h2>
+                                    <a :href="fighter_linkedins[3]" :class="linkedin_button_classes">LinkedIn</a>
+                                    <div class="css-typing text-base mt-2">
+                                        <p class="text-gray-300">{{fighter_bios[3]}}</p>
+                                        <div class="hiders">
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="body-hunter" style="display:none" class="css-typing">
-                                    <h2>{{ fighters[1] }}</h2>
-                                    <p>body hunter</p>
+                                    <h2 class="text-green-400 text-lg inline-block">> {{ fighters[1] }}</h2>
+                                    <a :href="fighter_linkedins[1]" :class="linkedin_button_classes">LinkedIn</a>
+                                    <div class="css-typing text-base mt-2">
+                                        <p class="text-gray-300">{{fighter_bios[1]}}</p>
+                                        <div class="hiders">
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="body-klace" style="display:none" class="css-typing">
-                                    <h2>{{ fighters[2] }}</h2>
-                                    <p>body klace</p>
+                                    <h2 class="text-green-400 text-lg inline-block">> {{ fighters[2] }}</h2>
+                                    <a :href="fighter_linkedins[2]" :class="linkedin_button_classes">LinkedIn</a>
+                                    <div class="css-typing text-base mt-2">
+                                        <p class="text-gray-300">{{fighter_bios[2]}}</p>
+                                        <div class="hiders">
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
