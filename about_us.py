@@ -12,7 +12,7 @@ linkedin_button_classes = "ml-5 inline-block text-base border border-white borde
 fighters = ["Mason","Hunter","Klace","Brian"]
 fighter_bios = [
     "Hey, I’m Mason Aviles. I’m a software developer and have been in the front end space for 6 years.  I believe in accessible and creative technology.  I’m really passionate about being in this space because I see myself as a crafter and this is new age crafting.  I love building, creating, and watching people interact with my work.",
-    "",
+    "Hey my name is Hunter and I am a software dev. I'm native to the PNW and love all outdoor sports, the higher the adrenaline rush the better. I have been fascinated by coding ever since my first job shadow at Microsoft in the 8th grade. I realized after my last position of running the government sales sector of my last job that I could teach myself just about everything so I went back to something I always loved. Coding!",
     "Hello I'm Klace Koch - I'm a former bomb and missile tech, turned bicycle mechanic, turned bike shop manager, and now my current form python developer.  I’m fascinated in that intersecting area between hardware and software and how to incorporate technology into traditionally analog environments. My hope is to join an organization that encourages innovation and appreciates the unconventional.",
     "Hello, my name is Brian Lemons; I'm a software developer and United States Army Veteran. During my time in the Army, I developed a passion for utilizing technology. I knew that I wanted to develop technologies that made a real difference in organizations, and the people that utilize them. With the previous skills and drive I learned in the Army, coupled with my desire to build impactful applications, I believe that I can make a difference in any organization I could be apart of.",
 ]
@@ -20,7 +20,7 @@ fighter_linkedins = [
     "https://www.linkedin.com/in/masonaviles/",
     "https://www.linkedin.com/in/hgbritten/",
     "https://www.linkedin.com/in/klacewho/",
-    ""
+    "https://www.linkedin.com/in/brian-lemons25/"
 ]
 
 def handle_click(event):
@@ -176,6 +176,8 @@ template = """
                                     <div class="css-typing text-base mt-2">
                                         <p class="text-gray-300">{{fighter_bios[1]}}</p>
                                         <div class="hiders">
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
                                             <p>&nbsp;</p>
                                             <p>&nbsp;</p>
                                             <p>&nbsp;</p>
