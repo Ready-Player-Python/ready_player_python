@@ -84,13 +84,12 @@
     <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center">
       <!-- Terminal Board -->
       <div class="bg-gray-600 flex flex-col w-full md:w-2/3 items-start text-center md:text-left h-100 p-10">
-        <div class="w-full flex flex-row">
+        <div class="w-full flex flex-row justify-between">
           <!-- Vue Containers -->
-          <div id="app" class="grid justify-items-center items-center">
+          <div id="app" class="grid justify-items-center items-center relative">
           </div>
-
           <canvas id="game-board" width="400" height="400" style="border: 1px solid black;"></canvas>
-          <div id="score-container" class="flex content-center justify-items-center items-center flex-col">
+          <div id="score-container" class="flex content-center justify-center items-center flex-col">
             <h3 id="score" class="text-center">Score: 0</h3>
             <h6 id="high-score" class="text-center">High Score: 0</h6>
           </div>

@@ -13,7 +13,10 @@ def data(*args):
 
 def handle_click(event):
     print("clicked!")
-    javascript.this().greeting = "change to this greeting"
+    if document['help-box'].style.display == "block":
+        document['help-box'].style.display = "none"
+    else:
+        document['help-box'].style.display = "block"
 
 
 def show_names(event):
@@ -38,7 +41,14 @@ methods = {
 template = """
     <button @click="start_game_slow" class="text-center block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Slow Game</button>
     <button @click="start_game_fast" class="text-center block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Fast Game</button>
-    <button id="instructions-btn" class="btn btn-info text-center block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">?</button>
+    <div class="relative">
+        <button @click="handle_click" id="instructions-btn" class="btn btn-info text-center block bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-3xl">?</button>
+        <div id="help-box" style="display:none" class="absolute w-72 bg-black text-white p-2 -right-20 top-20">
+            <p>Instructions:</p>
+            <p>Use W, A, S, D to move or Arrow keys</p>
+            <p>Press spacebar to pause</p>
+        </div>
+    </div>
 """
 
 
