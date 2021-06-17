@@ -17,6 +17,7 @@ paused = False
 
 ctx = None
 canvas = None
+game_loop = None
 
 
 def game():
@@ -65,37 +66,44 @@ def update_score(new_score):
 def key_push(evt):
     global xv, yv, pre_pause, paused
     key = evt.keyCode
-    if key == 37 or key == 65 and not paused:
-        xv = -1
-        yv = 0
-    elif key == 38 or key == 87 and not paused:
-        xv = 0
-        yv = -1
-    elif key == 39 or key == 68 and not paused:
-        xv = 1
-        yv = 0
-    elif key == 40 or key == 83 and not paused:
-        xv = 0
-        yv = 1
-    elif key == 32:
+    if key == 32 or key == 80:
         temp = [xv, yv]
         xv = pre_pause[0]
         yv = pre_pause[1]
         pre_pause = [*temp]
         paused = not paused
+    elif key == 37 and paused == False or key == 65 and paused == False:
+        xv = -1
+        yv = 0
+    elif key == 38 and paused == False or key == 87 and paused == False:
+        xv = 0
+        yv = -1
+    elif key == 39 and paused == False or key == 68 and paused == False:
+        xv = 1
+        yv = 0
+    elif key == 40 and paused == False or key == 83 and paused == False:
+        xv = 0
+        yv = 1
+    else:
+        pass
 
 
 def show_instructions(evt):
-    window.alert("Use the arrow keys to move and press spacebar to pause the game.")
+    window.alert(
+        "Use the arrow keys or a, w, s, d to move and press spacebar to pause the game."
+    )
 
 
 def display_game(refresh_rate):
-    global canvas, ctx
+    global canvas, ctx, game_loop
+    instructions_btn = document["instructions-btn"]
     canvas = document["game-board"]
     ctx = canvas.getContext("2d")
-    document.addEventListener("keydown", key_push)
-    instructions_btn = document["instructions-btn"]
-    instructions_btn.addEventListener("click", show_instructions)
+    if game_loop:
+        window.clearInterval(game_loop)
+    else:
+        document.addEventListener("keydown", key_push)
+        instructions_btn.addEventListener("click", show_instructions)
     game_loop = window.setInterval(game, refresh_rate)
 
 
