@@ -14,7 +14,7 @@ fighter_bios = [
     "Hey, I’m Mason Aviles. I’m a software developer and have been in the front end space for 6 years.  I believe in accessible and creative technology.  I’m really passionate about being in this space because I see myself as a crafter and this is new age crafting.  I love building, creating, and watching people interact with my work.",
     "",
     "Hello I'm Klace Koch - I'm a former bomb and missile tech, turned bicycle mechanic, turned bike shop manager, and now my current form python developer.  I’m fascinated in that intersecting area between hardware and software and how to incorporate technology into traditionally analog environments. My hope is to join an organization that encourages innovation and appreciates the unconventional.",
-    "",
+    "Hello, my name is Brian Lemons; I'm a software developer and United States Army Veteran. During my time in the Army, I developed a passion for utilizing technology. I knew that I wanted to develop technologies that made a real difference in organizations, and the people that utilize them. With the previous skills and drive I learned in the Army, coupled with my desire to build impactful applications, I believe that I can make a difference in any organization I could be apart of.",
 ]
 fighter_linkedins = [
     "https://www.linkedin.com/in/masonaviles/",
@@ -107,15 +107,18 @@ template = """
     </nav>
 
     <!-- Container -->
-    <div class="pt-24 pb-24 backdrop-opacity-1=20 bg-gradient-to-r from-yellow-300 via-red-400 to-pink-400">
+    <div class="pt-4 pb-24 backdrop-opacity-1=20 bg-gradient-to-r from-yellow-300 via-red-400 to-pink-400">
         <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center">
+            <div class="w-full md:w-5/6 flex justify-center mb-5">
+                <iframe src="phaser_demo.html" width="1000" height="150" frameborder="0" scrolling="no"><p>Your browser does not support iframes.</p></iframe>
+            </div>
             <!-- Terminal Board -->
-            <div class="bg-gray-600 flex flex-col w-full md:w-5/6 items-start text-center md:text-left h-80 p-5">
+            <div class="bg-gray-600 h-80 flex flex-col w-4/5 md:w-5/6 items-start text-center md:text-left h-80 p-5">
                 <div class="w-full">
 
                     <section class="flex">
                         <div class="mt-2 w-2/4">
-                            <h2 class="text-4xl mb-2">{{ greeting }}</h2>
+                            <h2 class="text-4xl mb-5">{{ greeting }}</h2>
                             <div>
                                 <button id="type" @click="handle_click_show_fighter_mason" type="button" :class="fighter_button_classes">{{ fighters[0] }}</button>
 
@@ -154,6 +157,8 @@ template = """
                                     <div class="css-typing text-base mt-2">
                                         <p class="text-gray-300">{{fighter_bios[3]}}</p>
                                         <div class="hiders">
+                                            <p>&nbsp;</p>
+                                            <p>&nbsp;</p>
                                             <p>&nbsp;</p>
                                             <p>&nbsp;</p>
                                             <p>&nbsp;</p>

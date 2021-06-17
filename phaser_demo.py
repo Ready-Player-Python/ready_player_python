@@ -8,8 +8,8 @@ class Game(object):
         self.game = window.Phaser.Game.new(
             {
                 'type': Phaser.AUTO,
-                'width': 800,
-                'height': 600,
+                'width': 1000,
+                'height': 150,
                 'physics': {
                     'default': 'arcade',
                     'arcade': {
@@ -25,11 +25,11 @@ class Game(object):
 
     def preload(self, *args):
         this = javascript.this()
-        this.load.setBaseURL('http://labs.phaser.io')
+        # this.load.setBaseURL('http://labs.phaser.io')
 
-        this.load.image('sky', 'assets/skies/space3.png')
-        this.load.image('logo', 'assets/sprites/phaser3-logo.png')
-        this.load.image('red', 'assets/particles/red.png')
+        this.load.image('sky', 'assets/space3.png')
+        this.load.image('logo', 'assets/snake-smol.png')
+        this.load.image('red', 'assets/particle.png')
 
     def create(self, *args):
         this = javascript.this()
