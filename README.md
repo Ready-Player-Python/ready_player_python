@@ -23,5 +23,9 @@
 [Our Wire Frame](resources/midterm_wire.png)
 
 ## Team Agreement
-
 <!-- - [FUTURE LINK HERE](FUTURE LINKE HERE) -->
+
+## Credits
+
+[Game Logic Code from yakkomajuri](https://github.com/yakkomajuri/brython-snake)
+
